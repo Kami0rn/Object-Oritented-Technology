@@ -1,0 +1,60 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS T:\2-2565\OOT\gui> javac gui\JaMain.java
+error: file not found: gui\JaMain.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+PS T:\2-2565\OOT\gui> cd .\Java\
+cd : Cannot find path 'T:\2-2565\OOT\gui\Java\' because it does not exist.
+At line:1 char:1
++ cd .\Java\
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (T:\2-2565\OOT\gui\Java\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS T:\2-2565\OOT\gui> javac gui\Jamain.java
+error: file not found: gui\Jamain.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+PS T:\2-2565\OOT\gui> javac gui\Jamain.java
+error: file not found: gui\Jamain.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+PS T:\2-2565\OOT\gui> cd .\Java\
+cd : Cannot find path 'T:\2-2565\OOT\gui\Java\' because it does not exist.
+At line:1 char:1
++ cd .\Java\
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (T:\2-2565\OOT\gui\Java\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS T:\2-2565\OOT\gui> javac GUI\Jamain.java
+error: file not found: GUI\Jamain.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+PS T:\2-2565\OOT\gui> javac gui\Jamain.java
+error: file not found: gui\Jamain.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+PS T:\2-2565\OOT\gui> javac Jamain.java
+PS T:\2-2565\OOT\gui> javac Jamain.java
+PS T:\2-2565\OOT\gui> java gui.Jamain
+Error: Could not find or load main class gui.Jamain
+Caused by: java.lang.ClassNotFoundException: gui.Jamain
+PS T:\2-2565\OOT\gui> java Jamain    
+Error: Could not find or load main class Jamain
+Caused by: java.lang.NoClassDefFoundError: gui/Jamain (wrong name: Jamain)
+PS T:\2-2565\OOT\gui> cd ..
+PS T:\2-2565\OOT> java gui.Jamain
+Hello Thailand! 
+PS T:\2-2565\OOT> cd gui         
+PS T:\2-2565\OOT\gui> java g.Jamain  
+Error: Could not find or load main class g.Jamain
+Caused by: java.lang.NoClassDefFoundError: gui/Jamain (wrong name: g/Jamain)
+PS T:\2-2565\OOT\gui> javac g\Jamain.java
+PS T:\2-2565\OOT\gui> java g.Jamain      
+Hello Thailand! 
+PS T:\2-2565\OOT\gui>  

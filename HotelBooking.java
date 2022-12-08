@@ -3,7 +3,7 @@ package week02 ;
 import java.util.Scanner;
 
 public class HotelBooking {
-
+//ยังไม่ได้แก้ไขหลายจุด
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("will you book a room? (yes/no) : ");

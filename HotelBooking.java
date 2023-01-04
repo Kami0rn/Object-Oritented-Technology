@@ -1,80 +1,42 @@
-package week02 ;
-
+package week02.lab;
 import java.util.Scanner;
-
 public class HotelBooking {
-//ยังไม่ได้แก้ไขหลายจุด
-    public static void main(String[] args) {
+    final static int pc = 5000;
+    final static int pe = 7000;
+    final static int pbreakfast = 150;
+    final static int prt = 500;
+    final static double ps = 0.0175;
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        System.out.print("will you book a room? (yes/no) : ");
-        String book = sc.nextLine();
-        int numOfRoom,prizeOfRoom,numOfTable,totalPrize = 0 ;
-
+        System.out.println("Do you want to book the hotel room(s)?" );
+        String book = sc.next();
+        double total = 0;
         if(book.equals("yes")){
-            System.out.print("Please select your room type ('common': 5,000 Baht / 'extra': 7,000 baht ) : ");
-            String typeOfRoom = sc.nextLine();
-            if (typeOfRoom.equals("common")) {
-                prizeOfRoom = 5000 ;
-                totalPrize += 5000 ;
-                System.out.print("How many room you will book? : ");
-                numOfRoom = sc.nextInt() ;
-                System.out.print("Would you like to take a breakfast ? (yes/no):");
-                System.out.println("debug 1 ");
-                
-                String breakFast = sc.nextLine();
-                if (breakFast.equals("yes")) {
-                    totalPrize += 150*numOfRoom ;
-                }
-                else if (breakFast.equals("no")) {
-                    totalPrize += 0;
-                    System.out.println("debug 2 ");
-                }
-                
-                
+            System.out.println("Please choose a room type:" );
+            String type = sc.next();
+            if(type.equals("extra")){
+                total = pe;
+            } else if(type.equals("common")) {
+                total = pc;
             }
-            else if (typeOfRoom.equals("extra")) {
-                prizeOfRoom = 7000 ;
-                totalPrize += 7000 ;
-                System.out.print("How many room you will book? : ");
-                numOfRoom = sc.nextInt() ;
-                System.out.print("Would you like to take a breakfast ? (yes/no):");
-                String breakFast = sc.nextLine() ;
-                if (breakFast.equals("yes")) {
-                    totalPrize += 150*numOfRoom ;
-                }
-                else if (breakFast.equals("no")) {
-                    totalPrize += 0;
-                }else{
-                    totalPrize += 0;
-                }
+            System.out.println("How many rooms?" );
+            int room = sc.nextInt();
+            total *= room;
+            System.out.println("Breakfast included?" );
+            String breakfast = sc.next();
+            if(breakfast.equals("yes")){
+                total += room*pbreakfast;
             }
-            else {
-                System.out.print("err code 1 ");
-            }
-        
-
-        }
-        else if (book.equals("no")) {
-            System.out.print("Will you book a table? (yes/no):");
-            String bookTableString = sc.nextLine();
-            if (bookTableString.equals("yes")) {
-                System.out.print("How many table you will book? : ");
-                numOfTable = sc.nextInt() ;
-                totalPrize += numOfTable * 500 ;
-            }else if ((bookTableString.equals("no"))) {
-                System.out.print("Why you still here? Fxck off!!!! ");
+        } else if(book.equals("no")){
+            System.out.println("Do you want to reserve the table(s)?");
+            String rt = sc.next();
+            if(rt.equals("yes")){
+                System.out.println("How many tables??" );
+                int tabal = sc.nextInt();
+                total = tabal*prt;
             }
         }
-        else {
-            System.out.print("err code 2 ");
-        
-        }
-
-        double total = totalPrize*(1.75/100) ;
-        double vat = totalPrize-total ;
-        System.out.println("Prize is "+totalPrize) ;
-        System.out.println("VAT is "+vat) ;
-        System.out.println("Total prize is (Include VAT 1.75)"+total) ;
-        sc.close();
+        total += total*ps;
+        System.out.println("You need to pay "+total+" baht (service charge included).");
     }
 }
